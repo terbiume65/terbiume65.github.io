@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Writing samples — Toby Chung</title>
-<meta name="description" content="Nine pieces of coursework from my undergraduate years at HKU — policy briefs, essays, and a project proposal.">
+<meta name="description" content="Ten pieces of coursework from my undergraduate years at HKU — global health policy, social sciences, and linguistics.">
 <style>
   :root {
     --bg: #fbfbf9; --surface: #ffffff; --text: #1c1c1a; --muted: #5f5f5a;
@@ -53,22 +53,26 @@
   }
   .group-note { color: var(--muted); font-size: 14.5px; max-width: 66ch; margin: 0 0 22px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr)); gap: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; }
 
   .card {
     display: flex; flex-direction: column; text-decoration: none; color: inherit;
     background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 20px 20px 18px; transition: border-color .15s, transform .15s;
+    padding: 20px 20px 17px; transition: border-color .15s, transform .15s;
   }
   .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .card .meta {
-    font-size: 11.5px; letter-spacing: .09em; text-transform: uppercase;
-    color: var(--muted); margin: 0 0 9px;
+  .card .meta { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; line-height: 1.45; }
+  .card .meta .code {
+    font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
   }
   .card h3 { font-size: 17.5px; line-height: 1.3; letter-spacing: -0.01em; margin: 0 0 8px; font-weight: 600; }
   .card .desc { font-size: 14.5px; color: var(--muted); margin: 0 0 16px; flex: 1; }
-  .card .read { font-size: 13.5px; font-weight: 500; color: var(--accent); margin: 0; }
-  .card .read .arrow { font-weight: 400; }
+  .card .read {
+    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+    gap: 4px 12px; margin: 0; font-size: 13px;
+  }
+  .card .read .pages { color: var(--muted); }
+  .card .read .go { color: var(--accent); font-weight: 500; }
 
   footer {
     padding: 30px 0 64px; color: var(--muted); font-size: 13.5px;
@@ -86,49 +90,41 @@
     <p class="eyebrow">University of Hong Kong · 2019–2023</p>
     <h1>Writing samples</h1>
     <p class="lede">
-      Nine pieces of coursework from my BA, kept as I handed them in — only the student number and
+      Ten pieces of coursework from my BA, kept as I handed them in — only the student number and
       file metadata are gone. Less a portfolio than a record of <strong>how I was taught to argue</strong>,
       and what I did with it.
     </p>
-    <p class="facts"><span>9 pieces</span> · <span>110 pages</span> · <span>2019–2023</span> · <span>PDF, opens in a new tab</span></p>
+    <p class="facts"><span>10 pieces</span> · <span>114 pages</span> · <span>2019–2023</span> · <span>PDF, opens in a new tab</span></p>
   </header>
 
   <main>
     <div class="intro">
       <p>
         I studied Global Health &amp; Development with a second major in Linguistics, so the range here
-        is not a detour — it is what the degree actually looked like. A policy brief asks you to
-        recommend a decision and cost it; a theory essay asks you to hold one position under pressure;
-        a close reading asks you to notice what a text is doing rather than what it says. Different
-        muscles, same habit of checking the argument for the weak joint.
+        is not a detour — it is what the degree actually looked like. The pieces are grouped by
+        discipline rather than by year: health, medicine and policy; the social sciences; and
+        linguistics. Within each group they run roughly from applied work to something more reflective.
       </p>
       <p>
-        They are grouped by what the writing has to <em>do</em>, not by year. All are coursework, not
-        publications, and I have left the marks out: the reasoning is the part worth reading.
+        A policy brief asks you to recommend a decision and cost it; a theory essay asks you to hold one
+        position under pressure; a close reading asks you to notice what a text is doing rather than
+        what it says. Different muscles, same habit of checking the argument for the weak joint. All are
+        coursework, not publications, and I have left the marks out: the reasoning is the part worth
+        reading.
       </p>
     </div>
 
     <section class="group">
-      <h2>Policy and persuasion</h2>
+      <h2>Health, medicine, and policy</h2>
       <p class="group-note">
-        Writing for a decision-maker: define the problem, weigh the options, cost the proposal, and be
-        honest about what could go wrong.
+        A global policy brief, a national agenda-setting report, the legal instruments underneath both —
+        then the TCM essay steps back to the history of medicine and asks where a tradition belongs in
+        a modern health system.
       </p>
       <div class="grid">
 
-        <a class="card" href="writing/bev-exhibition-proposal.pdf" target="_blank" rel="noopener">
-          <p class="meta">CAES9922 · 2020 · 12 pages</p>
-          <h3>BEV Exhibition: Green Transport of the Future</h3>
-          <p class="desc">
-            A funding proposal for a six-day electric-vehicle exhibition at the HKCEC, covering floor
-            plan, staffing, sponsorship and a budget that holds in both the bullish and the bearish
-            case. The argument is carried by logistics and numbers rather than by citation.
-          </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
-        </a>
-
         <a class="card" href="writing/alcohol-policy-brief.pdf" target="_blank" rel="noopener">
-          <p class="meta">GHAD2001 · 2020 · 16 pages</p>
+          <p class="meta"><span class="code">GHAD2001</span> · Globalisation and health</p>
           <h3>Controlling global alcohol use</h3>
           <p class="desc">
             A proposed framework convention on alcohol control, argued the way a WHO brief would:
@@ -136,11 +132,11 @@
             political feasibility. It deliberately picks the measures that could win global agreement
             over the ones that work best in theory.
           </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
+          <p class="read"><span class="pages">2020 · 16 pages</span><span class="go">Read PDF ↗</span></p>
         </a>
 
         <a class="card" href="writing/musculoskeletal-policy-report.pdf" target="_blank" rel="noopener">
-          <p class="meta">GHAD3001 · 2021 · 18 pages</p>
+          <p class="meta"><span class="code">GHAD3001</span> · Global health policy</p>
           <h3>Musculoskeletal conditions: a neglected disability epidemic</h3>
           <p class="desc">
             A mock policy report for a CDC agenda-setting exercise: make the case that musculoskeletal
@@ -148,22 +144,11 @@
             who could stop it. The hard part is arguing for a condition that kills few people but
             disables many.
           </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
+          <p class="read"><span class="pages">2021 · 18 pages</span><span class="go">Read PDF ↗</span></p>
         </a>
 
-      </div>
-    </section>
-
-    <section class="group">
-      <h2>Argument and evidence</h2>
-      <p class="group-note">
-        Essays that answer a question. Each one takes a position early and then spends its words
-        earning it.
-      </p>
-      <div class="grid">
-
         <a class="card" href="writing/global-health-law-essays.pdf" target="_blank" rel="noopener">
-          <p class="meta">GHAD2002 · 2020 · 9 pages</p>
+          <p class="meta"><span class="code">GHAD2002</span> · Legal foundations for global health and development</p>
           <h3>Two questions on global health law</h3>
           <p class="desc">
             Two exam essays written under time pressure — whether the International Health Regulations
@@ -171,46 +156,11 @@
             protects access to medicines. Both answer “to a moderate extent”, then show the mechanism
             failing where law meets state interest.
           </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
+          <p class="read"><span class="pages">2020 · 9 pages</span><span class="go">Read PDF ↗</span></p>
         </a>
-
-        <a class="card" href="writing/un-anarchy-essay.pdf" target="_blank" rel="noopener">
-          <p class="meta">GLBS3101 · 2021 · 5 pages</p>
-          <h3>To what extent does the UN reduce the negative effects of international anarchy?</h3>
-          <p class="desc">
-            A short international-relations essay that defines anarchy, then tests the UN against
-            realism, liberalism and constructivism instead of picking one. The verdict — a small
-            extent — follows from noticing that international law is enforced by reputation and
-            retaliation, which powerful states can ignore.
-          </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
-        </a>
-
-        <a class="card" href="writing/zero-population-growth.pdf" target="_blank" rel="noopener">
-          <p class="meta">SOWK3099 · 2022 · 13 pages</p>
-          <h3>The impact of zero population growth</h3>
-          <p class="desc">
-            Weighs the Malthusian case for zero population growth against the neoclassical case
-            against it, then uses Japan as the test. The conclusion is unsatisfying on purpose: the
-            same demographic fact produces different outcomes depending on labour markets, welfare
-            and expectations.
-          </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
-        </a>
-
-      </div>
-    </section>
-
-    <section class="group">
-      <h2>Language, place, and self</h2>
-      <p class="group-note">
-        Close reading, and the two pieces where the first person is part of the argument rather than
-        a formality.
-      </p>
-      <div class="grid">
 
         <a class="card" href="writing/tcm-curriculum-essay.pdf" target="_blank" rel="noopener">
-          <p class="meta">CCCH9029 · 2019 · 22 pages</p>
+          <p class="meta"><span class="code">CCCH9029</span> · Ideas and Practices of Healing Arts in Traditional Chinese Medicine</p>
           <h3>Traditional Chinese medicine and my curriculum</h3>
           <p class="desc">
             A first-year essay asking where traditional Chinese medicine belongs in a global health
@@ -218,11 +168,46 @@
             and under-resourced systems. The earliest piece here, and the most personal: the argument
             is partly about what I wanted to do with the degree.
           </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
+          <p class="read"><span class="pages">2019 · 22 pages</span><span class="go">Read PDF ↗</span></p>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Social sciences</h2>
+      <p class="group-note">
+        International relations, demography, urban studies, and one applied proposal. Four scales of the
+        same question: how large systems decide who gets what.
+      </p>
+      <div class="grid">
+
+        <a class="card" href="writing/un-anarchy-essay.pdf" target="_blank" rel="noopener">
+          <p class="meta"><span class="code">GLBS3101</span> · Theories and Practices of International Relations</p>
+          <h3>To what extent does the UN reduce the negative effects of international anarchy?</h3>
+          <p class="desc">
+            A short international-relations essay that defines anarchy, then tests the UN against
+            realism, liberalism and constructivism instead of picking one. The verdict — a small
+            extent — follows from noticing that international law is enforced by reputation and
+            retaliation, which powerful states can ignore.
+          </p>
+          <p class="read"><span class="pages">2021 · 5 pages</span><span class="go">Read PDF ↗</span></p>
+        </a>
+
+        <a class="card" href="writing/zero-population-growth.pdf" target="_blank" rel="noopener">
+          <p class="meta"><span class="code">SOWK3099</span> · Population and Development</p>
+          <h3>The impact of zero population growth</h3>
+          <p class="desc">
+            Weighs the Malthusian case for zero population growth against the neoclassical case
+            against it, then uses Japan as the test. The conclusion is unsatisfying on purpose: the
+            same demographic fact produces different outcomes depending on labour markets, welfare
+            and expectations.
+          </p>
+          <p class="read"><span class="pages">2022 · 13 pages</span><span class="go">Read PDF ↗</span></p>
         </a>
 
         <a class="card" href="writing/enclave-urbanism-reflection.pdf" target="_blank" rel="noopener">
-          <p class="meta">URBS1003 · 2020 · 3 pages</p>
+          <p class="meta"><span class="code">URBS1003</span> · Theories and Global Trends in Urban Development</p>
           <h3>Reflections on enclave urbanism</h3>
           <p class="desc">
             A response to He’s paper on enclosed residential forms in Guangzhou, read against a longer
@@ -230,11 +215,33 @@
             compounds and gated communities. It ends with a suggestion the original did not make: treat
             “enclaveness” as a scale, not a binary.
           </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
+          <p class="read"><span class="pages">2020 · 3 pages</span><span class="go">Read PDF ↗</span></p>
         </a>
 
+        <a class="card" href="writing/bev-exhibition-proposal.pdf" target="_blank" rel="noopener">
+          <p class="meta"><span class="code">CAES9922</span> · Language, Genre and Reports</p>
+          <h3>BEV Exhibition: Green Transport of the Future</h3>
+          <p class="desc">
+            A funding proposal for a six-day electric-vehicle exhibition at the HKCEC, covering floor
+            plan, staffing, sponsorship and a budget that holds in both the bullish and the bearish
+            case. The argument is carried by logistics and numbers rather than by citation.
+          </p>
+          <p class="read"><span class="pages">2020 · 12 pages</span><span class="go">Read PDF ↗</span></p>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Linguistics</h2>
+      <p class="group-note">
+        Two courses, one question — what carries meaning. One follows it through sound and context;
+        the other through the history and structure of a single language.
+      </p>
+      <div class="grid">
+
         <a class="card" href="writing/semantics-essay.pdf" target="_blank" rel="noopener">
-          <p class="meta">LING2003 · 2021 · 12 pages</p>
+          <p class="meta"><span class="code">LING2003</span> · Semantics: Meaning and Grammar</p>
           <h3>Sounds, context, and meaning</h3>
           <p class="desc">
             An argument that semantics cannot be studied as a closed module, built from tone in
@@ -242,7 +249,19 @@
             literal meaning misleads an outsider. The examples carry the argument, which is how
             linguistics usually has to work.
           </p>
-          <p class="read">Read the PDF <span class="arrow" aria-hidden="true">↗</span></p>
+          <p class="read"><span class="pages">2021 · 12 pages</span><span class="go">Read PDF ↗</span></p>
+        </a>
+
+        <a class="card" href="writing/cantonese-linguistics-quiz.pdf" target="_blank" rel="noopener">
+          <p class="meta"><span class="code">LING2058</span> · Topics in Cantonese Linguistics</p>
+          <h3>Four questions on Cantonese</h3>
+          <p class="desc">
+            Four short answers from a midterm: why Cantonese keeps Middle Chinese final consonants and
+            the rhymes of Tang poetry that Mandarin lost, who the Bai Yue were and what their languages
+            left in Cantonese, why no single romanisation ever stuck, and a derivational rule for AAB
+            ideophones tested on new adjectives.
+          </p>
+          <p class="read"><span class="pages">2021 · 4 pages</span><span class="go">Read PDF ↗</span></p>
         </a>
 
       </div>
