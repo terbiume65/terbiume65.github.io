@@ -21,7 +21,7 @@ Below are a glimpse of all of my projects.
 [Bankruptcy Prediction using Transformers](https://github.com/terbiume65/transformers-bankruptcy-prediction)
 
 ### Writing samples
-[Ten pieces of HKU coursework](https://terbiume65.github.io/writing.html) — health policy, social sciences, and linguistics
+[Selected coursework](https://terbiume65.github.io/writing.html) — ten pieces from my BASc: health policy, social sciences, and linguistics
 
 ### MSc Thesis — Mahidol University
 [Predicting Metastasis and Metastatic Organotropism using Machine Learning](https://github.com/terbiume65/metastasis-organotropism-ml)
