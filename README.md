@@ -1,6 +1,7 @@
 # Welcome to my Github
 
-The homepage is under work so please do not visit it.
+Homepage: [terbiume65.github.io](https://terbiume65.github.io)
+
 Below are a glimpse of all of my projects.
 
 ### Flask Web App
@@ -18,4 +19,3 @@ Below are a glimpse of all of my projects.
 
 ### Capstone school work
 [Bankruptcy Prediction using Transformers](https://github.com/terbiume65/transformers-bankruptcy-prediction)
-

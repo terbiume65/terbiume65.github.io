@@ -1,19 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>My Website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahjong — Toby Chung</title>
+<meta name="description" content="A short guide to mahjong, written for friends who kept asking.">
+<style>
+  :root {
+    --bg: #fbfbf9; --surface: #ffffff; --text: #1c1c1a; --muted: #5f5f5a;
+    --line: #e4e4df; --accent: #1f6f5c; --max: 900px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141514; --surface: #1c1e1d; --text: #e9eae7; --muted: #a3a6a1;
+      --line: #2e312f; --accent: #6ec7ae;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  header { padding: 56px 0 8px; }
+  .back { font-size: 14px; text-decoration: none; color: var(--muted); }
+  .back:hover { color: var(--accent); }
+  h1 { font-size: clamp(30px, 5vw, 42px); letter-spacing: -0.02em; margin: 18px 0 12px; }
+  p.lede { color: var(--muted); max-width: 60ch; margin: 0 0 36px; }
+  figure { margin: 0 0 28px; }
+  img { max-width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  footer { padding: 28px 0 64px; color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); margin-top: 40px; }
+</style>
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="school_work.html">School Work</a></li>
-			<li><a href="mahjong.html">Mahjong</a></li>
-			<li><a href="about_cancer.html">About Cancer</a></li>
-		</ul>
-	</nav>
+<div class="wrap">
+  <header>
+    <a class="back" href="index.html">← Toby Chung</a>
+    <h1>Mahjong</h1>
+    <p class="lede">
+      A two-page guide to the basics — enough to sit down at a table without being a
+      complete liability.
+    </p>
+  </header>
 
+  <main>
+    <figure>
+      <img src="assets/mahjong/1.png" alt="Mahjong guide, page one">
+      <figcaption>Page one — tiles, seats, and how a hand is built.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/mahjong/2.png" alt="Mahjong guide, page two">
+      <figcaption>Page two — scoring and the things people usually get wrong.</figcaption>
+    </figure>
+  </main>
 
-	<img src="assets/mahjong/1.png" alt="Mahjong Instructions 1">
-	<img src="assets/mahjong/2.png" alt="Mahjong Instructions 2">
+  <footer>© <span id="year">2026</span> Toby Chung</footer>
+</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

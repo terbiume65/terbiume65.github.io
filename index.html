@@ -1,18 +1,465 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>My Website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toby Chung</title>
+<meta name="description" content="Toby Chung — data, research, and small tools. DBA candidate and biomedical sciences student in Hong Kong.">
+<style>
+  :root {
+    --bg: #fbfbf9;
+    --surface: #ffffff;
+    --text: #1c1c1a;
+    --muted: #5f5f5a;
+    --line: #e4e4df;
+    --accent: #1f6f5c;
+    --accent-soft: #e8f2ee;
+    --radius: 14px;
+    --max: 900px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141514;
+      --surface: #1c1e1d;
+      --text: #e9eae7;
+      --muted: #a3a6a1;
+      --line: #2e312f;
+      --accent: #6ec7ae;
+      --accent-soft: #1f2b27;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  header.site { padding: 72px 0 40px; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 18px;
+  }
+  h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 18px; }
+  .lede { font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); max-width: 62ch; margin: 0 0 28px; }
+  .lede strong { color: var(--text); font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--text); text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: border-color .15s, transform .15s;
+  }
+  .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #0f1513; } }
+
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 28px; font-weight: 600; }
+
+  .group { margin-bottom: 44px; }
+  .group:last-of-type { margin-bottom: 0; }
+  .group h3 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 4px; font-weight: 600; }
+  .group .note { font-size: 14.5px; color: var(--muted); margin: 0 0 18px; max-width: 62ch; }
+  .group .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+
+  .card {
+    position: relative; display: flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 20px;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card.highlight { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); background: var(--accent-soft); }
+  .card h4 { font-size: 17px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); font-size: 14.5px; margin: 0 0 16px; flex: 1; }
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+  .chip {
+    font-size: 11.5px; color: var(--muted); border: 1px solid var(--line);
+    border-radius: 999px; padding: 3px 9px; background: var(--bg);
+  }
+  .chip.accent { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+  .card a.cover { text-decoration: none; color: inherit; }
+  .card a.cover::after { content: ""; position: absolute; inset: 0; }
+  .more { font-size: 14px; color: var(--muted); margin: 0; }
+
+  .about p { max-width: 68ch; }
+  .about p:first-child { margin-top: 0; }
+
+  .list { display: grid; gap: 24px; }
+  .item h3 { font-size: 17px; margin: 0 0 2px; }
+  .item .meta { font-size: 13.5px; color: var(--muted); margin: 0 0 6px; }
+  .item p { margin: 0; max-width: 68ch; color: var(--muted); }
+  .item ul { margin: 6px 0 0; padding-left: 20px; color: var(--muted); font-size: 14.5px; }
+  .item li { margin-bottom: 3px; }
+
+  .certs { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  .cert { border-left: 2px solid var(--line); padding-left: 14px; }
+  .cert strong { display: block; font-size: 14.5px; font-weight: 600; }
+  .cert span { font-size: 13px; color: var(--muted); }
+
+  .skillrow { display: grid; grid-template-columns: 150px 1fr; gap: 10px 16px; margin-bottom: 16px; }
+  .skillrow .label {
+    font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); padding-top: 4px;
+  }
+  .skillrow .values { display: flex; flex-wrap: wrap; gap: 6px; }
+  @media (max-width: 560px) { .skillrow { grid-template-columns: 1fr; gap: 6px; } }
+
+  .langs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px 28px; }
+  .lang {
+    display: flex; justify-content: space-between; gap: 14px;
+    border-bottom: 1px solid var(--line); padding-bottom: 8px; font-size: 15px;
+  }
+  .lang .level { color: var(--muted); font-size: 13.5px; }
+
+  footer { padding: 36px 0 64px; color: var(--muted); font-size: 13.5px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+</style>
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="school_work.html">School Work</a></li>
-			<li><a href="mahjong.html">Mahjong</a></li>
-			<li><a href="about_cancer.html">About Cancer</a></li>
-		</ul>
-	</nav>
 
+<div class="wrap">
+  <header class="site">
+    <p class="eyebrow">New Territories, Hong Kong</p>
+    <h1>Toby Chung</h1>
+    <p class="lede">
+      I work with data — matching messy real-world records to clean references, training models on
+      text and images, and building small tools that make research less painful.
+      Currently fighting cancer while finishing a <strong>DBA</strong> and studying
+      <strong>biomedical science</strong> at CityU.
+    </p>
+    <div class="links">
+      <a class="btn primary" href="https://www.linkedin.com/in/terbium/">LinkedIn</a>
+      <a class="btn" href="https://github.com/terbiume65">GitHub</a>
+      <a class="btn" href="#work">Projects</a>
+      <a class="btn" href="mahjong.html">Mahjong</a>
+      <a class="btn" href="https://www.facebook.com/groups/27473069578/" title="DSRCT support group">DSRCT</a>
+    </div>
+  </header>
+</div>
 
-	<h1>Hi! Welcome to my homepage</h1>
+<section id="work">
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <div class="group">
+      <h3>My work at the UNDP</h3>
+      <p class="note">
+        Built as a research fellow at the Human Development Report Office in New York, late 2022.
+      </p>
+      <div class="grid">
+
+        <article class="card highlight">
+          <h4>Automated place-name matching</h4>
+          <p>
+            A Streamlit app plus notebook that match messy lists of place names — other languages,
+            typos, variant spellings — to official GADM administrative areas, then export the matching
+            shapefiles as a geopackage.
+          </p>
+          <div class="stack"><span class="chip accent">Main project</span><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">GeoPandas</span></div>
+          <a class="cover" href="https://github.com/terbiume65/streamlit-automated-matching-prod" aria-label="Open Automated place-name matching on GitHub"></a>
+        </article>
+
+        <article class="card">
+          <h4>GADM matching</h4>
+          <p>
+            The earlier, rougher attempt at the same problem — kept public as a record of how the
+            production version came together.
+          </p>
+          <div class="stack"><span class="chip">Python</span><span class="chip">Streamlit</span></div>
+          <a class="cover" href="https://github.com/terbiume65/streamlit-automated-gadm-matching" aria-label="Open GADM matching on GitHub"></a>
+        </article>
+
+        <article class="card">
+          <h4>Streamlit country code matching</h4>
+          <p>
+            Converts country names and aliases from inconsistent datasets into ISO codes, tolerating
+            spelling mistakes with Levenshtein distance.
+          </p>
+          <div class="stack"><span class="chip">Python</span><span class="chip">Streamlit</span></div>
+          <a class="cover" href="https://github.com/terbiume65/streamlit-automated-country-matching" aria-label="Open Streamlit country code matching on GitHub"></a>
+        </article>
+
+        <article class="card">
+          <h4>Simple EDA exploration</h4>
+          <p>
+            A short, deliberately rough exploration of open human-development datasets, done as a
+            warm-up before the main internship work.
+          </p>
+          <div class="stack"><span class="chip">Jupyter</span><span class="chip">pandas</span></div>
+          <a class="cover" href="https://github.com/terbiume65/dem-data-exploration" aria-label="Open Simple EDA exploration on GitHub"></a>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Capstone school work at HKU</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Bankruptcy prediction using transformers</h4>
+          <p>
+            Scraping 10-K filings from SEC EDGAR and using transfer learning with transformer models to
+            predict bankruptcy from raw text. Comparable results to much larger studies, on a small
+            sample and modest hardware.
+          </p>
+          <div class="stack"><span class="chip">Jupyter</span><span class="chip">Transformers</span><span class="chip">NLP</span></div>
+          <a class="cover" href="https://github.com/terbiume65/transformers-bankruptcy-prediction" aria-label="Open Bankruptcy prediction on GitHub"></a>
+        </article>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Doctoral research</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>DBA dissertation</h4>
+          <p>
+            Working repository for my doctoral research — sources and figures while the study takes
+            shape. Tentative title: <em>New trends in virtual spokescharacters for branding: consumer
+            attitude and response</em>.
+          </p>
+          <div class="stack"><span class="chip accent">In progress</span><span class="chip">Research</span></div>
+          <a class="cover" href="https://github.com/terbiume65/dba-dissertation" aria-label="Open DBA dissertation on GitHub"></a>
+        </article>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Streamlit apps</h3>
+      <div class="grid">
+
+        <article class="card">
+          <h4>General image classification with CNNs</h4>
+          <p>
+            A dashboard that lets people with no coding experience build and train a CNN on their own
+            images, choosing classes, network depth, learning rate, and optimiser.
+          </p>
+          <div class="stack"><span class="chip">TensorFlow</span><span class="chip">Streamlit</span></div>
+          <a class="cover" href="https://github.com/terbiume65/streamlit-image-classification" aria-label="Open General image classification on GitHub"></a>
+        </article>
+
+        <article class="card">
+          <h4>Portfolio allocation in finance</h4>
+          <p>
+            Fetches live prices with <code>yfinance</code> for a portfolio you construct, then charts
+            how it has actually performed.
+          </p>
+          <div class="stack"><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">yfinance</span></div>
+          <a class="cover" href="https://github.com/terbiume65/streamlit-portfolio" aria-label="Open Portfolio allocation in finance on GitHub"></a>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Flask web app</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Card distribution / Werewolf</h4>
+          <p>
+            A small Flask app for distributing cards to players during locally hosted games, with
+            separate admin and player views.
+          </p>
+          <div class="stack"><span class="chip">Flask</span><span class="chip">HTML/CSS/JS</span></div>
+          <a class="cover" href="https://github.com/terbiume65/carddist-web-app" aria-label="Open Card distribution app on GitHub"></a>
+        </article>
+      </div>
+    </div>
+
+    <p class="more">Everything public lives on <a href="https://github.com/terbiume65?tab=repositories">GitHub</a>.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>
+      I studied Global Health &amp; Development at HKU, with a second major in Linguistics — which is
+      what led, fairly directly, to the bankruptcy-prediction project above.
+    </p>
+    <p>
+      After HKU I spent the second half of 2022 as a research fellow at the UNDP's Human Development
+      Report Office in New York, exploring datasets for the next Human Development Report and building
+      the matching tools that ended up in the projects on this page.
+    </p>
+    <p>
+      Since then I've added an MBA at Anglia Ruskin (distinction) and an MSc in Biomedical and Health
+      Informatics at Mahidol, and I'm now at the dissertation stage of a DBA at Edgewood University.
+    </p>
+    <p>
+      I'm studying biomedical sciences at CityU because I wanted the wet-lab and clinical grounding I
+      didn't have — to understand disease from the bench and the bedside, and hopefully to contribute
+      to a breakthrough for my own.
+    </p>
+    <p>
+      Currently fighting cancer — advanced-stage desmoplastic small round cell tumour — and doing
+      postgraduate work while receiving treatment. If remission is achieved, I'm looking for remote
+      roles or casual work with international organizations.
+    </p>
+    <p>
+      Away from work I read a lot, like languages and linguistics, have a lasting fondness for Tigger,
+      and play a fair amount of mahjong — enough to have
+      <a href="mahjong.html">written the basics up as a page</a> for people learning the game.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="list">
+
+      <div class="item">
+        <h3>English Tutor — HKTA Tang Hin Memorial Secondary School</h3>
+        <p class="meta">Hong Kong · Seasonal, Mar 2026 and Mar 2025</p>
+        <p>Coached students on the speaking component of the DSE English examination.</p>
+      </div>
+
+      <div class="item">
+        <h3>Research Assistant Fellow — UNDP</h3>
+        <p class="meta">Human Development Report Office · New York · Jul–Dec 2022</p>
+        <ul>
+          <li>Researched and explored datasets for the next Human Development Report.</li>
+          <li>Built a web app to match geospatial databases, including fuzzy string matching and an API for foreign-language datasets.</li>
+          <li>Audited past report data, automated value extraction, and verified the master figures before publication.</li>
+          <li>Helped host the Human Development Report 2022 launch at UN Headquarters.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Wealth Management Intern — St. James's Place</h3>
+        <p class="meta">Hong Kong · Jun–Sep 2020</p>
+        <p>
+          Data capture, client database management and documentation, plus promotional material for
+          investments at a FTSE 100 wealth management company.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="list">
+
+      <div class="item">
+        <h3>City University of Hong Kong</h3>
+        <p class="meta">BSc Biomedical Sciences · 2026 – present</p>
+        <p>Wet-lab and clinical sciences, alongside ongoing postgraduate research.</p>
+      </div>
+
+      <div class="item">
+        <h3>Edgewood University</h3>
+        <p class="meta">Doctor of Business Administration · 2024 – 2026 · candidate (all but dissertation)</p>
+        <p>
+          Dissertation stage. Tentative title: <em>New trends in virtual spokescharacters for
+          branding — consumer attitude and response</em>. Interests: brand personification, dark triad
+          traits, organisational behaviour, Goodhart's Law.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3>Mahidol University</h3>
+        <p class="meta">MSc Biomedical and Health Informatics · 2023 – 2026 · GPA 3.98/4.0</p>
+        <p>
+          Bangkok School of Tropical Medicine, Faculty of Tropical Medicine. Thesis: <em>Predicting
+          metastasis and metastatic organotropism in malignancies using machine learning</em>.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3>Anglia Ruskin University</h3>
+        <p class="meta">MBA · 2023 – 2024 · distinction</p>
+        <p>
+          Dissertation: <em>Beyond clinical care — establishing an integrated support organization in
+          Hong Kong to improve well-being in adolescents and young adults with long-term illnesses</em>.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3>The University of Hong Kong</h3>
+        <p class="meta">BASc Global Health &amp; Development, second major Linguistics · 2019 – 2023 · First Class Honours</p>
+        <p>
+          School of Public Health, LKS Faculty of Medicine. Linguistics capstone: bankruptcy prediction
+          from annual-report text with transformer models (A+). Dean's Honours List 2020 and 2021.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <h2>Certifications &amp; skills</h2>
+
+    <div class="certs">
+      <div class="cert"><strong>PyTorch for Deep Learning Professional Certificate</strong><span>DeepLearning.AI · 2026</span></div>
+      <div class="cert"><strong>Cyber Security 101 Certificate</strong><span>TryHackMe · 2026</span></div>
+      <div class="cert"><strong>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</strong><span>Oracle · 2025</span></div>
+      <div class="cert"><strong>Google Advanced Data Analytics Professional Certificate</strong><span>Google · 2023</span></div>
+      <div class="cert"><strong>Foundation Chartered Manager (fCMgr)</strong><span>Chartered Management Institute · 2024</span></div>
+      <div class="cert"><strong>Investment Foundations Certificate</strong><span>CFA Institute · 2020</span></div>
+    </div>
+
+    <div style="margin-top: 34px;">
+      <div class="skillrow">
+        <div class="label">Data &amp; ML</div>
+        <div class="values">
+          <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">NLP</span><span class="chip">Streamlit</span><span class="chip">GeoPandas</span><span class="chip">Jupyter</span><span class="chip">Flask</span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="label">Research</div>
+        <div class="values">
+          <span class="chip">Quantitative research</span><span class="chip">Statistical analysis</span><span class="chip">Spatial epidemiology</span><span class="chip">Health policy</span><span class="chip">Research ethics</span><span class="chip">Medical terminology</span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="label">Other</div>
+        <div class="values">
+          <span class="chip">Finance</span><span class="chip">Strategic planning</span><span class="chip">Project management</span><span class="chip">International development</span><span class="chip">Linguistics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="languages">
+  <div class="wrap">
+    <h2>Languages</h2>
+    <div class="langs">
+      <div class="lang"><span>Cantonese</span><span class="level">Native</span></div>
+      <div class="lang"><span>English</span><span class="level">Full professional · IELTS 8.5/9.0</span></div>
+      <div class="lang"><span>Japanese</span><span class="level">Full professional · JLPT N1</span></div>
+      <div class="lang"><span>Mandarin</span><span class="level">Professional working</span></div>
+      <div class="lang"><span>Spanish</span><span class="level">Limited working</span></div>
+      <div class="lang"><span>Vietnamese</span><span class="level">Elementary</span></div>
+      <div class="lang"><span>Latin</span><span class="level">Elementary</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Toby Chung</span>
+    <span>Static site, hosted on GitHub Pages.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
