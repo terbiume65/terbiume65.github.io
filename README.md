@@ -20,5 +20,8 @@ Below are a glimpse of all of my projects.
 ### Capstone school work
 [Bankruptcy Prediction using Transformers](https://github.com/terbiume65/transformers-bankruptcy-prediction)
 
+### Writing samples
+[Nine pieces of HKU coursework](https://terbiume65.github.io/writing.html) — policy briefs, essays, and a project proposal
+
 ### MSc Thesis — Mahidol University
 [Predicting Metastasis and Metastatic Organotropism using Machine Learning](https://github.com/terbiume65/metastasis-organotropism-ml)
