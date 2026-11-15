@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courses taken — Toby Chung</title>
+<meta name="description" content="Every course I have taken across seven institutions, from the HKU BASc to the CityU biomedical sciences courses in progress.">
+<style>
+  :root {
+    --bg: #fbfbf9; --surface: #ffffff; --text: #1c1c1a; --muted: #5f5f5a;
+    --line: #e4e4df; --accent: #1f6f5c; --accent-soft: #e8f2ee; --max: 900px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141514; --surface: #1c1e1d; --text: #e9eae7; --muted: #a3a6a1;
+      --line: #2e312f; --accent: #6ec7ae; --accent-soft: #1f2b27;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 56px 0 8px; }
+  .back { font-size: 14px; text-decoration: none; color: var(--muted); }
+  .back:hover { color: var(--accent); }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted); margin: 28px 0 10px;
+  }
+  h1 { font-size: clamp(30px, 5vw, 42px); letter-spacing: -0.02em; margin: 0 0 14px; }
+  .lede { color: var(--muted); max-width: 62ch; margin: 0 0 18px; font-size: 17.5px; }
+  .lede strong { color: var(--text); font-weight: 600; }
+  .facts { font-size: 13.5px; color: var(--muted); margin: 0 0 14px; }
+  .facts span { white-space: nowrap; }
+  .intro { margin: 26px 0 10px; max-width: 68ch; }
+  .intro p { margin: 0 0 12px; }
+
+  section.school { padding: 34px 0 10px; border-top: 1px solid var(--line); margin-top: 34px; }
+  section.school:first-of-type { border-top: none; margin-top: 8px; padding-top: 0; }
+  .school-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+  h2 { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+  .count { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .school-note { font-size: 14.5px; color: var(--muted); margin: 3px 0 6px; }
+  h3.cat {
+    font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; margin: 24px 0 2px;
+  }
+  h3.cat .n { font-weight: 400; letter-spacing: 0; }
+
+  ul.courses { list-style: none; margin: 0; padding: 0; }
+  ul.courses li {
+    display: grid; grid-template-columns: 96px 1fr auto; gap: 2px 14px;
+    align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line);
+  }
+  ul.courses li:last-child { border-bottom: none; }
+  .code {
+    font-size: 12.5px; color: var(--muted); letter-spacing: .03em;
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  .name { font-size: 15px; }
+  .grade {
+    font-size: 12.5px; color: var(--muted); white-space: nowrap;
+    font-variant-numeric: tabular-nums; text-align: right;
+  }
+  .grade.progress {
+    font-size: 11.5px; color: var(--accent); border: 1px solid var(--accent);
+    background: var(--accent-soft); border-radius: 999px; padding: 2px 9px;
+  }
+
+  footer {
+    padding: 30px 0 64px; color: var(--muted); font-size: 13.5px;
+    border-top: 1px solid var(--line); margin-top: 48px;
+  }
+  footer p { margin: 0 0 6px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    ul.courses li { grid-template-columns: 1fr auto; }
+    .code { grid-column: 1; grid-row: 1; }
+    .grade { grid-column: 2; grid-row: 1; }
+    .name { grid-column: 1 / -1; grid-row: 2; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="back" href="index.html">← Toby Chung</a>
+    <p class="eyebrow">Seven institutions · 2019–present</p>
+    <h1>Courses taken</h1>
+    <p class="lede">
+      Every course that appears on a transcript, from my first HKU semester to the CityU courses I am
+      taking now. <strong>72 in total</strong>, grouped by institution and, at HKU, by how each one
+      counted toward the degree.
+    </p>
+    <p class="facts"><span>72 courses</span> · <span>7 institutions</span> · <span>2019–present</span></p>
+    <div class="intro">
+      <p>
+        Grades are as recorded on the transcripts. The HKU section is the BASc — Global Health &amp;
+        Development as the major, Linguistics as the second — so the course codes mix GHAD, LING and
+        whatever else the degree required. Later sections follow the postgraduate work and the current
+        biomedical sciences degree.
+      </p>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="school">
+      <div class="school-head">
+        <h2>University of Hong Kong</h2><span class="count">39 courses</span>
+      </div>
+      <p class="school-note">BASc in Global Health &amp; Development, with a second major in Linguistics.</p>
+      <h3 class="cat">Global Health &amp; Development <span class="n">· 21</span></h3>
+      <ul class="courses">
+        <li><span class="code">BASC 9001</span><span class="name">Foundations of Human Knowledge</span><span class="grade">P</span></li>
+        <li><span class="code">BBMS 2011</span><span class="name">Research Methods in Medicine and Health Sciences</span><span class="grade">A-</span></li>
+        <li><span class="code">CAES 9922</span><span class="name">Language, Genre and Reports</span><span class="grade">A</span></li>
+        <li><span class="code">CEMD 9001</span><span class="name">Practical Chinese for BASc (GHD) Students</span><span class="grade">A-</span></li>
+        <li><span class="code">DESN 9001</span><span class="name">Leadership beyond borders</span><span class="grade">P</span></li>
+        <li><span class="code">ECON 2262</span><span class="name">Economic development</span><span class="grade">B</span></li>
+        <li><span class="code">GHAD 1001</span><span class="name">Foundations in global health and development</span><span class="grade">B+</span></li>
+        <li><span class="code">GHAD 1002</span><span class="name">Introductory economics and finance</span><span class="grade">A</span></li>
+        <li><span class="code">GHAD 2001</span><span class="name">Globalisation</span><span class="grade">A-</span></li>
+        <li><span class="code">GHAD 2002</span><span class="name">Legal foundations for global health and development</span><span class="grade">A-</span></li>
+        <li><span class="code">GHAD 3001</span><span class="name">Global health policy</span><span class="grade">B+</span></li>
+        <li><span class="code">GHAD 3002</span><span class="name">Health systems and financing</span><span class="grade">A-</span></li>
+        <li><span class="code">GHAD 3003</span><span class="name">Global health governance</span><span class="grade">A</span></li>
+        <li><span class="code">GHAD 4001</span><span class="name">Leadership and advocacy in global health and development</span><span class="grade">A-</span></li>
+        <li><span class="code">GHAD 4002</span><span class="name">The role and impact of private sector in health and development</span><span class="grade">A-</span></li>
+        <li><span class="code">GHAD 4004</span><span class="name">Bringing it all together: Seminar in planetary health</span><span class="grade">B</span></li>
+        <li><span class="code">GHAD 4010</span><span class="name">Capstone in global health and development</span><span class="grade">P</span></li>
+        <li><span class="code">SOWK 3099</span><span class="name">Population and development</span><span class="grade">A-</span></li>
+        <li><span class="code">STAT 1005</span><span class="name">Essential skills for undergraduates: Foundations of Data Science</span><span class="grade">A</span></li>
+        <li><span class="code">STAT 1600</span><span class="name">Statistics: ideas and concepts</span><span class="grade">B+</span></li>
+        <li><span class="code">URBS 1003</span><span class="name">Theories and Global Trends in Urban Development</span><span class="grade">A-</span></li>
+      </ul>
+      <h3 class="cat">Linguistics <span class="n">· 12</span></h3>
+      <ul class="courses">
+        <li><span class="code">LING 1000</span><span class="name">Introduction to language</span><span class="grade">A</span></li>
+        <li><span class="code">LING 2003</span><span class="name">Semantics: Meaning and grammar</span><span class="grade">A+</span></li>
+        <li><span class="code">LING 2004</span><span class="name">Phonetics: Describing sounds</span><span class="grade">A-</span></li>
+        <li><span class="code">LING 2012</span><span class="name">Experimental phonetics and phonology</span><span class="grade">A+</span></li>
+        <li><span class="code">LING 2040</span><span class="name">Languages in contact</span><span class="grade">A</span></li>
+        <li><span class="code">LING 2050</span><span class="name">Grammatical description</span><span class="grade">B+</span></li>
+        <li><span class="code">LING 2056</span><span class="name">Sociolinguistics</span><span class="grade">A-</span></li>
+        <li><span class="code">LING 2058</span><span class="name">Topics in Cantonese linguistics</span><span class="grade">A-</span></li>
+        <li><span class="code">LING 2067</span><span class="name">Natural language processing</span><span class="grade">A-</span></li>
+        <li><span class="code">LING 2070</span><span class="name">Historical linguistics: Languages, genes and human migrations</span><span class="grade">B+</span></li>
+        <li><span class="code">LING 2071</span><span class="name">Introductory statistics for the humanities</span><span class="grade">A-</span></li>
+        <li><span class="code">LING 3002</span><span class="name">Extended essay (capstone experience)</span><span class="grade">A+</span></li>
+      </ul>
+      <h3 class="cat">Common Core <span class="n">· 4</span></h3>
+      <ul class="courses">
+        <li><span class="code">CCCH 9029</span><span class="name">Ideas and Practices of Healing in Traditional China</span><span class="grade">B+</span></li>
+        <li><span class="code">CCGL 9022</span><span class="name">Globalization in Question: Human and Economic Consequences</span><span class="grade">P</span></li>
+        <li><span class="code">CCHU 9045</span><span class="name">Vision: The Science and Art of Perception</span><span class="grade">A-</span></li>
+        <li><span class="code">CCST 9012</span><span class="name">Our Place in the Universe</span><span class="grade">A-</span></li>
+      </ul>
+      <h3 class="cat">Electives <span class="n">· 2</span></h3>
+      <ul class="courses">
+        <li><span class="code">COMP 1117</span><span class="name">Computer programming</span><span class="grade">A+</span></li>
+        <li><span class="code">PSYC 2066</span><span class="name">Foundations of cognitive science</span><span class="grade">P</span></li>
+      </ul>
+    </section>
+
+    <section class="school">
+      <div class="school-head">
+        <h2>Chinese University of Hong Kong</h2><span class="count">1 course</span>
+      </div>
+      <p class="school-note">One course taken cross-institutionally and credited to the GHD major.</p>
+      <ul class="courses">
+        <li><span class="code">GLBS 3101</span><span class="name">Theories and Practices of International Relations</span><span class="grade">A</span></li>
+      </ul>
+    </section>
+
+    <section class="school">
+      <div class="school-head">
+        <h2>Korea University</h2><span class="count">3 courses</span>
+      </div>
+      <p class="school-note">Exchange electives.</p>
+      <ul class="courses">
+        <li><span class="code">ISC 101A</span><span class="name">Calculus I</span><span class="grade">B</span></li>
+        <li><span class="code">ISC 101B</span><span class="name">Calculus II</span><span class="grade">B</span></li>
+        <li><span class="code">ISC 112</span><span class="name">Linear Algebra</span><span class="grade">B+</span></li>
+      </ul>
+    </section>
+
+    <section class="school">
+      <div class="school-head">
+        <h2>Mahidol University</h2><span class="count">14 courses</span>
+      </div>
+      <p class="school-note">MSc in Biomedical and Health Informatics.</p>
+      <ul class="courses">
+        <li><span class="code">TMHG 517</span><span class="name">Statistical Methods in Spatial Epidemiology</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 523</span><span class="name">Principles and Foundations in Public Health Informatics</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 526</span><span class="name">Organizational Behavior and Management Skills</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 528</span><span class="name">Disease Surveillance and Public Health Investigation</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 529</span><span class="name">Legal and Ethical Issues in Health Informatics</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 531</span><span class="name">Statistics in Health Science</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 534</span><span class="name">Data Mining and Machine Learning</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 535</span><span class="name">Mathematical and Economic Modelling Applications in Biomedical and Public Health</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 541</span><span class="name">Fundamentals of Healthcare and Medical Terminology</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 544</span><span class="name">Challenging Issues in Health Informatics</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 545</span><span class="name">Information Systems and Implementation in Healthcare</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 546</span><span class="name">Seminar in Health Informatics</span><span class="grade">B+</span></li>
+        <li><span class="code">TMHG 547</span><span class="name">Essentials of information technology systems in healthcare</span><span class="grade">A</span></li>
+        <li><span class="code">TMHG 548</span><span class="name">Research Methods in Health Informatics</span><span class="grade">A</span></li>
+      </ul>
+    </section>
+
+    <section class="school">
+      <div class="school-head">
+        <h2>Anglia Ruskin University</h2><span class="count">1 course</span>
+      </div>
+      <p class="school-note">MBA.</p>
+      <ul class="courses">
+        <li><span class="code">B 02CAM</span><span class="name">Entrepreneurial Action (Postgraduate Capstone)</span><span class="grade">DI</span></li>
+      </ul>
+    </section>
+
+    <section class="school">
+      <div class="school-head">
+        <h2>Edgewood University</h2><span class="count">11 courses</span>
+      </div>
+      <p class="school-note">Doctor of Business Administration.</p>
+      <ul class="courses">
+        <li><span class="code">BUS 901</span><span class="name">Introduction to Academic Scholarship and Doctoral Studies</span><span class="grade">A</span></li>
+        <li><span class="code">BUS 902</span><span class="name">Business Sustainability and Ethics</span><span class="grade">AB</span></li>
+        <li><span class="code">BUS 903</span><span class="name">Analyzing Behavior in Organizations</span><span class="grade">B</span></li>
+        <li><span class="code">BUS 904</span><span class="name">Executive Supply Chain and Negotiation Strategies</span><span class="grade">A</span></li>
+        <li><span class="code">BUS 910</span><span class="name">Financial Decision and Value Creation</span><span class="grade">AB</span></li>
+        <li><span class="code">BUS 920</span><span class="name">Quantitative Analysis I</span><span class="grade">A</span></li>
+        <li><span class="code">BUS 921</span><span class="name">Qualitative Research in Business</span><span class="grade">B</span></li>
+        <li><span class="code">BUS 922</span><span class="name">Quantitative Analysis II</span><span class="grade">A</span></li>
+        <li><span class="code">BUS 940</span><span class="name">Effective Organizational Leadership</span><span class="grade">A</span></li>
+        <li><span class="code">BUS 941</span><span class="name">Leading Change</span><span class="grade">B</span></li>
+        <li><span class="code">BUS 962</span><span class="name">Managerial Economics</span><span class="grade">A</span></li>
+      </ul>
+    </section>
+
+    <section class="school">
+      <div class="school-head">
+        <h2>City University of Hong Kong</h2><span class="count">3 courses</span>
+      </div>
+      <p class="school-note">BSc in Biomedical Sciences — in progress.</p>
+      <ul class="courses">
+        <li><span class="code">BMS 1901</span><span class="name">Calculus for Life Sciences</span><span class="grade progress">In Progress</span></li>
+        <li><span class="code">CHEM 1200</span><span class="name">Discovery in Biology</span><span class="grade progress">In Progress</span></li>
+        <li><span class="code">CHEM 1300</span><span class="name">Principles of General Chemistry</span><span class="grade progress">In Progress</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Compiled from academic transcripts, 2019–2026. Course titles as recorded; grades unchanged.</p>
+    <p>© <span id="year">2026</span> Toby Chung · <a href="index.html">Home</a></p>
+  </footer>
+</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

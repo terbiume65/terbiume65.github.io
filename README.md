@@ -23,5 +23,8 @@ Below are a glimpse of all of my projects.
 ### Writing samples
 [Selected coursework](https://terbiume65.github.io/writing.html) — ten pieces from my BASc: health policy, social sciences, and linguistics
 
+### Courses taken
+[Every course across seven institutions](https://terbiume65.github.io/courses.html) — HKU, CUHK, Korea University, Mahidol, Anglia Ruskin, Edgewood, CityU
+
 ### MSc Thesis — Mahidol University
 [Predicting Metastasis and Metastatic Organotropism using Machine Learning](https://github.com/terbiume65/metastasis-organotropism-ml)
