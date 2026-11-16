@@ -4,7 +4,8 @@ Homepage: [terbiume65.github.io](https://terbiume65.github.io)
 
 Below are a glimpse of all of my projects.
 
-### Flask Web App
+### Web apps
+[Two-button calculator](https://terbiume65.github.io/eml-calculator/) — the whole scientific calculator built from `1` and `eml(x,y)`  
 [Card Distribution/Werewolf](https://github.com/terbiume65/carddist-web-app)
 
 ### Streamlit Apps
