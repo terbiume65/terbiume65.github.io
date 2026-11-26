@@ -11,6 +11,16 @@ Below are a glimpse of all of my projects.
 [Two-button calculator](https://terbiume65.github.io/eml-calculator/) — the whole scientific calculator built from `1` and `eml(x,y)`  
 [Card Distribution/Werewolf](https://github.com/terbiume65/carddist-web-app)
 
+### Learning apps
+[Deutsch — German A1](https://terbiume65.github.io/german-learning/) — vocabulary, visual grammar, graded reader, dictation and a Christmas market
+
+[Hangul — Korean A1](https://terbiume65.github.io/korean-learning/) — vocabulary, visual grammar, graded reader and a café
+
+### Games
+[Cash Catcher / 大家来抢钱](https://terbiume65.github.io/cashcatcher-web/) — browser reimplementation of the 2011 iOS board game
+
+[Western Dream](https://terbiume65.github.io/western-dream/) — fan tribute to the 1992 SEGA coin pusher
+
 ### Streamlit Apps
 [General Image Classification App using CNN](https://github.com/terbiume65/streamlit-image-classification)  
 [Portfolio Allocation in Finance](https://github.com/terbiume65/streamlit-portfolio)
